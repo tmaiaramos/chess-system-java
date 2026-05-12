@@ -1,6 +1,10 @@
 package application;
 
+import java.util.Scanner;
+
+import chess.ChessPiece;
 import chess.ChessMatch;
+import chess.ChessPosition;
 
 /**
  * Ponto de entrada da aplicação do jogo de xadrez.
@@ -25,7 +29,21 @@ public class Program {
      * @param args argumentos de linha de comando (não utilizados)
      */
     public static void main(String[] args) {        
-        ChessMatch chessMatch = new ChessMatch();        
-        UI.printBoard(chessMatch.getPieces());
+        
+        Scanner sc = new Scanner(System.in);
+        ChessMatch chessMatch = new ChessMatch(); 
+
+        while (true) {
+            UI.printBoard(chessMatch.getPieces());
+            System.out.println();
+            System.out.print("Source: ");
+            ChessPosition source = UI.readChessPosition(sc);
+
+            System.out.println();
+            System.out.print("Target: ");
+            ChessPosition target = UI.readChessPosition(sc);
+            
+            ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+        }
     }
 }
