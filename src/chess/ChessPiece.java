@@ -18,7 +18,7 @@ import boardgame.Board;
  * (ex.: verificar se uma captura é válida comparando cores) seja escrita uma
  * única vez nos métodos herdados.
  */
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     /** Cor desta peça (BLACK ou WHITE), indicando a qual jogador ela pertence. */
     private Color color;
