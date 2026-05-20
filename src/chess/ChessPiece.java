@@ -23,6 +23,8 @@ public abstract class ChessPiece extends Piece {
 
     /** Cor desta peça (BLACK ou WHITE), indicando a qual jogador ela pertence. */
     private Color color;
+    private int moveCount;
+
 
     /**
      * Cria uma peça de xadrez associada ao tabuleiro e com a cor informados.
@@ -42,6 +44,18 @@ public abstract class ChessPiece extends Piece {
      */
     public Color getColor() {
         return color;
+    }
+
+    public int getMoveCount() {
+        return moveCount;
+    }
+
+    public void increaseMoveCount() {
+        moveCount++;
+    }
+
+    public void decreaseMoveCount() {
+        moveCount--;
     }
 
     public ChessPosition getChessPosition() {
